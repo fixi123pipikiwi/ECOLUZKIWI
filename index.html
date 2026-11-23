@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOLUZ - Ahorro inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>⚡ ECOLUZ</h1>
+    <p>Pequeñas acciones, grandes ahorros.</p>
+</header>
+
+<nav class="navigation">
+    <button class="tab active" data-tab="inicio">Inicio</button>
+    <button class="tab" data-tab="habitos">Hábitos diarios</button>
+    <button class="tab" data-tab="recibo">Mi recibo</button>
+    <button class="tab" data-tab="avisos">Recordatorios</button>
+</nav>
+
+<main class="container">
+
+    <section id="inicio" class="page active">
+        <h2>Bienvenido a ECOLUZ 🌱</h2>
+        <p>Controla tu consumo y mejora tus hábitos eléctricos.</p>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Último recibo</h3>
+                <p id="inicioRecibo">S/ 0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Meta de ahorro</h3>
+                <p id="inicioMeta">S/ 0.00</p>
+            </div>
+
+            <div class="card">
+                <h3>Ahorro potencial</h3>
+                <p id="inicioAhorro">S/ 0.00</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>Progreso de hoy</h3>
+            <p id="progresoInicio">0 hábitos completados</p>
+        </div>
+    </section>
+
+    <section id="habitos" class="page">
+        <h2>Mis hábitos diarios 📋</h2>
+        <p>Completa tus actividades para ahorrar electricidad.</p>
+
+        <div id="listaHabitos"></div>
+
+        <p id="progresoHabitos"></p>
+    </section>
+
+    <section id="recibo" class="page">
+        <h2>Mi recibo de electricidad 🧾</h2>
+
+        <label>¿Cuánto pagaste en tu último recibo?</label>
+        <input type="number" id="montoRecibo"
+        placeholder="Ejemplo: 100" min="0.01" step="0.01">
+
+        <label>¿Qué porcentaje deseas ahorrar?</label>
+        <select id="porcentaje">
+            <option value="5">5%</option>
+            <option value="10" selected>10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+        </select>
+
+        <button id="guardarRecibo">Calcular y guardar</button>
+
+        <div id="resultadoRecibo" class="panel"></div>
+
+        <h3>Historial de recibos</h3>
+        <div id="historial"></div>
+    </section>
+
+    <section id="avisos" class="page">
+        <h2>Recordatorios 🔔</h2>
+        <p>Configura una hora para recibir un aviso diario.</p>
+
+        <label>Hora del recordatorio:</label>
+        <input type="time" id="horaAviso">
+
+        <button id="guardarAviso">Activar recordatorio</button>
+
+        <p id="estadoAviso"></p>
+        <p class="nota">Los avisos de esta primera versión funcionan mientras ECOLUZ permanezca abierta.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>ECOLUZ © 2026 | Cuidemos nuestro planeta 🌎</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
